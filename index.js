@@ -1,10 +1,12 @@
 function shoppingList() {
-$('.shopping-item-delete').on('click', function(event){
+$('.shopping-list').on('click', '.shopping-item-delete', function(event){
   $(event.currentTarget).parent().parent().remove();
 });
 
-$('.shopping-item-toggle').on('click', function(event){
-  $(event.currentTarget).parent().parent().find("span").addClass("shopping-item__checked");
+$('.shopping-list').on('click', '.shopping-item-toggle', function(event){
+let checkButton = $(event.currentTarget).parent().parent().find("span")[0];
+console.log(checkButton);
+$(checkButton).toggleClass("shopping-item__checked");
 });
 
 $('#js-shopping-list-form').on('submit', function(event){
